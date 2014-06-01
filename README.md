@@ -10,7 +10,7 @@ The "store" is essentially `Map[Keyword, Vector[Int]]`.
   - `GET "/average"` will
     - Return the average of the averages of each vector in the store as `{"average": 2.5}`, for example, if the store is not empty.
     - Return `{"average": null}` if the store is empty.
-  - `GET "/average/:key"` will return the average of the vector for the given `key`.
+  - `GET "/average/:key"` will
     - Return the average of the numbers contained in the vector associated with the given `key` as `{"average": 2.5}`, for example, if the `key` exists in the store.
     - Return `{"average": null}` if the store does not contain the given `key`.
   - `POST "/"` with `{"key": num}` will
