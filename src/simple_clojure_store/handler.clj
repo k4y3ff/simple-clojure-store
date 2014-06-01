@@ -44,6 +44,11 @@
   (swap! store update-kv-map k n)
   (@store k))
 
+(defn get-average-of-averages
+  "Returns a JSON response containing the average of averages for the store."
+  []
+  (response {:average (average-of-averages @store)}))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
