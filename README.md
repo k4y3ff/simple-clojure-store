@@ -18,3 +18,4 @@ The "store" is essentially `Map[Keyword, Vector[Int]]`.
     - Append the given `num` to the vector associated with the given `key`, if `key`, already exists in the store.
 
 - To run the unit tests, use `lein test`.
+- To run the test script, use `./test-script.sh`.
