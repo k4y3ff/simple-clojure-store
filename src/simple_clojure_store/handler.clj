@@ -42,8 +42,7 @@
    Updates the atom store with the given key and number.
    Returns the new collection associated with the given key."
   [k n]
-  (swap! store update-kv-map k n)
-  (@store k))
+  (k (swap! store update-kv-map k n)))
 
 (defn get-average-of-averages
   "Returns a JSON response containing the average of averages for the store."
