@@ -2,6 +2,7 @@
   (:use clojure.test
         simple-clojure-store.handler))
 
+; unit tests for average
 (deftest test-average
   (testing "average"
     (is (= 11/2 (average [1 2 3 4 5 6 7 8 9 10]))))
@@ -12,6 +13,7 @@
   (testing "average of collection with size 1"
     (is (= 1 (average [1])))))
 
+; unit tests for average-for-key
 (deftest test-average-for-key
   (testing "average for key not contained in map"
     (let [kv-map {}]
@@ -21,6 +23,7 @@
     (let [kv-map {:key [1 2 3]}]
       (is (= 2 (average-for-key kv-map :key))))))
 
+; unit tests for average-of-averages
 (deftest test-average-of-averages
   (testing "average of averages for empty map"
     (let [kv-map {}]
@@ -36,6 +39,7 @@
                   :key3 [7 8 9]}]
       (is (= 5 (average-of-averages kv-map))))))
 
+; unit tests for update-kv-map
 (deftest test-update-kv-map
   (testing "add key and num to empty map"
     (let [kv-map {}]
@@ -45,6 +49,7 @@
     (let [kv-map {:key [1]}]
       (is (= {:key [1 2]} (update-kv-map kv-map :key 2))))))
 
+; unit tests for update-store
 (deftest test-update-store
   (testing "add key and num to empty store"
     (is (= [1] (update-store :key1 1))))
