@@ -44,3 +44,13 @@
   (testing "add num to value collection when key already exists"
     (let [kv-map {:key [1]}]
       (is (= {:key [1 2]} (update-kv-map kv-map :key 2))))))
+
+(deftest test-update-store
+  (testing "add key and num to empty store"
+    (is (= [1] (update-store :key1 1))))
+
+  (testing "add key and num when key exists"
+    (is (= [1 2] (update-store :key1 2))))
+
+  (testing "add key and num when key does not exist"
+    (is (= [3] (update-store :key2 3)))))
