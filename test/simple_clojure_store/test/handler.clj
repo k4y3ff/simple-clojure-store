@@ -11,3 +11,12 @@
 
   (testing "average of collection with size 1"
     (is (= 1 (average [1])))))
+
+(deftest test-average-for-key
+  (testing "average for key not contained in map"
+    (let [kv-map {}]
+      (is (= nil (average-for-key kv-map :key)))))
+
+  (testing "average for key contained in map"
+    (let [kv-map {:key [1 2 3]}]
+      (is (= 2 (average-for-key kv-map :key))))))
