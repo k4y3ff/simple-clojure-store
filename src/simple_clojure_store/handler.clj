@@ -21,6 +21,17 @@
   [kv-map]
   (average (map average (vals kv-map))))
 
+(defn update-kv-map
+  [kv-map k n]
+  (if (k kv-map)
+    (update-in kv-map [k] conj n)
+    (assoc kv-map k [n])))
+
+(defn update-store
+  [k n]
+  (swap! store update-kv-map k n)
+  (@store k))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
