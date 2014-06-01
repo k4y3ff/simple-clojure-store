@@ -41,7 +41,7 @@ echo "GET /average/key2"
 curl $main"/average/key2"
 echo ""
 
-# key1
+# key3
 echo "GET /average/key3"
 curl $main"/average/key3"
 echo ""
