@@ -5,6 +5,8 @@
             [ring.util.response :refer [resource-response response]]
             [ring.middleware.json :as middleware]))
 
+(def store (atom {}))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
