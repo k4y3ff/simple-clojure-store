@@ -1,4 +1,5 @@
 (ns simple-clojure-store.handler
+  (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [compojure.core :refer [GET defroutes]]
@@ -67,7 +68,9 @@
     (response (update-store k n))))
 
 (defroutes app-routes
-  (GET "/" [] "Hello World")
+  (GET "/average" [] (get-average-of-averages))
+  (GET "/average/:k" [k] (get-average-for-key (keyword k)))
+  (POST "/" {body :body} (put-in-store body))
   (route/resources "/")
   (route/not-found "Not Found"))
 
