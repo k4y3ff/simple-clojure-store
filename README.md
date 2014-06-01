@@ -16,3 +16,5 @@ The "store" is essentially `Map[Keyword, Vector[Int]]`.
   - `POST "/"` with `{"key": num}` will
     - Create a new vector containing the given `num` and associate it with the given `key`, if `key` does not already exist in the store.
     - Append the given `num` to the vector associated with the given `key`, if `key`, already exists in the store.
+
+- To run the unit tests, use `lein test`.
