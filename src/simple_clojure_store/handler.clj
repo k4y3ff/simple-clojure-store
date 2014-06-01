@@ -49,6 +49,12 @@
   []
   (response {:average (average-of-averages @store)}))
 
+(defn get-average-for-key
+  "Takes a key.
+   Returns a JSON response containing the average the numbers in the collection associated with the key in store."
+  [k]
+  (response {:average (average-for-key @store k)}))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
