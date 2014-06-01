@@ -14,8 +14,8 @@ The "store" is essentially `Map[Keyword, Vector[Int]]`.
     - Return the average of the numbers contained in the vector associated with the given `key` as `{"average": 2.5}`, for example, if the `key` exists in the store.
     - Return `{"average": null}` if the store does not contain the given `key`.
   - `POST "/"` with `{"key": num}` will
-    - Create a new vector containing the given `num` and associate it with the given `key`, if `key` does not already exist in the store.
-    - Append the given `num` to the vector associated with the given `key`, if `key`, already exists in the store.
+    - Create a new vector containing the given `num` and associate it with the given `key`, if `key` does not already exist in the store. Then, return the vector.
+    - Append the given `num` to the vector associated with the given `key`, if `key`, already exists in the store. Then, return the vector.
 
 - To run the unit tests, use `lein test`.
 - To run the test script, use `./test-script.sh`.
