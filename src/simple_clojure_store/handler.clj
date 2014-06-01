@@ -13,6 +13,10 @@
     (/ (reduce + nums) (count nums))
     nil))
 
+(defn average-for-key
+  [kv-map k]
+  (average (kv-map k)))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
