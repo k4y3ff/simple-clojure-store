@@ -17,6 +17,10 @@
   [kv-map k]
   (average (kv-map k)))
 
+(defn average-of-averages
+  [kv-map]
+  (average (map average (vals kv-map))))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
