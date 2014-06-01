@@ -7,6 +7,12 @@
 
 (def store (atom {}))
 
+(defn average
+  [nums]
+  (if (seq nums)
+    (/ (reduce + nums) (count nums))
+    nil))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
