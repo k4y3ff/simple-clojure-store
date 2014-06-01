@@ -19,3 +19,7 @@ The "store" is essentially `Map[Keyword, Vector[Int]]`.
 
 - To run the unit tests, use `lein test`.
 - To run the test script, use `./test-script.sh`.
+
+## Related
+
+To get started, I used the [Compojure template](https://github.com/weavejester/compojure-template). You, too, can start a new Compojure project: `lein new compojure <project name>`!
