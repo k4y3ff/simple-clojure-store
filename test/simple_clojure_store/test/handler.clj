@@ -35,3 +35,12 @@
                   :key2 [4 5 6]
                   :key3 [7 8 9]}]
       (is (= 5 (average-of-averages kv-map))))))
+
+(deftest test-update-kv-map
+  (testing "add key and num to empty map"
+    (let [kv-map {}]
+      (is (= {:key [1]} (update-kv-map kv-map :key 1)))))
+
+  (testing "add num to value collection when key already exists"
+    (let [kv-map {:key [1]}]
+      (is (= {:key [1 2]} (update-kv-map kv-map :key 2))))))
