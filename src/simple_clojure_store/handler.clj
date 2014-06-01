@@ -55,6 +55,17 @@
   [k]
   (response {:average (average-for-key @store k)}))
 
+(defn put-in-store
+  "Takes the JSON response POSTed to '/'.
+   Parses the key and number from the JSON.
+   Adds the given key and number to the store.
+   Returns a JSON response of the new collection associated with the given key."
+  [body]
+  (let [kvp (first body)
+        k (key kvp)
+        n (val kvp)]
+    (response (update-store k n))))
+
 (defroutes app-routes
   (GET "/" [] "Hello World")
   (route/resources "/")
